@@ -8,8 +8,8 @@ let provider;
 beforeAll(() => {
   provider = new Pact({
     port: 1234,
-    consumer: "CatinderUi",
-    provider: "CatsApi",
+    consumer: "cats-ui",
+    provider: "cats-api",
   });
 
   return provider.setup().then(() =>
@@ -25,7 +25,7 @@ beforeAll(() => {
         },
         status: 200,
         headers: {
-          "Content-Type": "application/json; charset=utf-8",
+          "Content-Type": "application/json",
         },
       },
     })
